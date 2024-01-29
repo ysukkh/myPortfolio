@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영화 소개 웹사이트</title>
+    <style>
+        *{margin: 0; padding: 0; box-sizing: border-box;}
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        .movie-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .movie-item {
+            width: 100%;
+            margin: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+            position: relative;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .movie-item:hover {
+            transform: scale(1.02);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            padding: 0 10px;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 10px;
+            padding: 0 10px;
+        }
+
+        .icon-link {           
+            display: block;           
+            text-decoration: none; 
+            display: flex;
+            justify-content: center;     
+        }
+        .icon-link img{
+            width: 70%;
+        }
+
+        .icon-link:hover {           
+            transform: scale(1.1);
+        }
+
+        @media (min-width: 768px) {
+            .movie-item {
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media (min-width: 992px) {
+            .movie-item {
+                width: calc(33.3333% - 20px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>영화 소개 웹사이트</h1>
+    </header>
+
+    <section>
+        <div class="movie-list">
+            <!-- 5개의 movie-item 추가 -->
+            <div class="movie-item" onclick="selectMovie(1)">
+                <img src="../contents/img/movie01.png" alt="영화1 대표이미지">
+                <h2>아바타</h2>
+                <p><b>영화 줄거리:</b> 21세기 중반, 지구의 리소스 고갈로 죽어가는 상황에서 
+                    인류는 외계 행성인 판도라에 정착을 시도하며, 아름다운 자연과 황금 나비의 
+                    나라로 가득한 이 행성에서 전투 중 다친 형사 제이크 소울리가 자신의 쌍둥이 
+                    동생의 연구를 이어받아 판도라의 나비족과의 군대 갈등, 갈등의 격화와 함께 
+                    나비족과의 화해와 희망을 찾는 과정을 그린, 환경 보호와 다양성, 평화를 
+                    강조하는 영화 "아바타"입니다.</p>
+                <a class="icon-link" href="
+                https://namu.wiki/w/%EC%95%84%EB%B0%94%ED%83%80(%EC%98%81%ED%99%94)"
+                 target="_blank">
+                    <img src="../contents/img/con_bt.png" alt="">
+                </a>
+            </div>
+
+            <div class="movie-item" onclick="selectMovie(2)">
+                <img src="https://i.namu.wiki/i/JYYE-WpajnN1CQFp_Ibt-Mm0jzGr3VNJuivNQ14e55x-0xWk_DD7FURWdJ8r3GO0SbYKhyIVjASvqCGht4WggjlqTTYZ2HKIG4rEpGJN0eKeKsurvkVRhCfUkaML0vyvWY1rcdLm0GPKT-U64FQKSw.webp" alt="영화1 대표이미지">
+                <h2>타이타닉</h2>
+                <p><b>영화 줄거리:</b> "타이타닉"은 1912년에 침몰한 타이타닉호를 배경으로, 상류층 소녀 로즈와 빈민층 예술가 잭의 사랑 이야기를 그리며, 유적에서 로즈의 노래와 함께 84세에 생을 마치는 그녀의 추억을 되새기는 현대의 노인 로즈의 이야기를 담은 감동적인 로맨스 영화입니다.</p>
+                <a class="icon-link" href="
+                https://namu.wiki/w/%ED%83%80%EC%9D%B4%ED%83%80%EB%8B%89(%EC%98%81%ED%99%94)"
+                 target="_blank">
+                    <img src="../contents/img/con_bt.png" alt="">
+                </a>
+            </div>
+
+            <div class="movie-item" onclick="selectMovie(3)">
+                <img src="https://i.namu.wiki/i/RQWXPu3fQdj_eJbduTpHqakgBjvbONrQ61PFHXq4PFfmiGyQHAgq0CmbWldV5ZfMbaxC_CF9onxMBCyi8CXuhv_m77EbU3_kJ0-3_V0Dlk8etbnFnO57jHKH4lN7SPZ2W_loMne8uHXlWDt8MODEAQ.webp" alt="영화1 대표이미지">
+                <h2>어벤젼스 - 엔드게임</h2>
+                <p><b>영화 줄거리:</b> "어벤져스: 엔드게임"은 타노스의 손에서 인피니티 스톤을 되찾기 위해 어벤져스가 과거로 시간여행하고, 히어로들의 희생과 전쟁을 거치며 최종 전투에서 타노스를 물리치고, 토니 스타크가 인피니티 건틀릿을 사용해 자신을 포함한 삶을 희생하며 모든 것을 종결하는 과정을 다룬 마블 시네마틱 유니버스의 대미를 장식한 에픽한 슈퍼히어로 영화입니다.</p>
+                <a class="icon-link" href="
+                https://namu.wiki/w/%EC%96%B4%EB%B2%A4%EC%A0%B8%EC%8A%A4:%20%EC%97%94%EB%93%9C%EA%B2%8C%EC%9E%84?from=%EC%96%B4%EB%B2%A4%EC%A0%B8%EC%8A%A4%204"
+                 target="_blank">
+                    <img src="../contents/img/con_bt.png" alt="">
+                </a>
+            </div>
+
+            <div class="movie-item" onclick="selectMovie(4)">
+                <img src="대표이미지_주소_4" alt="영화4 대표이미지">
+                <h2>영화 제목 4</h2>
+                <p>영화 줄거리: 여기에 영화의 간단한 줄거리를 작성합니다.</p>
+                <a class="icon-link" href="연결링크_주소_4" target="_blank">링크 아이콘</a>
+            </div>
+
+            <div class="movie-item" onclick="selectMovie(5)">
+                <img src="대표이미지_주소_5" alt="영화5 대표이미지">
+                <h2>영화 제목 5</h2>
+                <p>영화 줄거리: 여기에 영화의 간단한 줄거리를 작성합니다.</p>
+                <a class="icon-link" href="연결링크_주소_5" target="_blank">링크 아이콘</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function selectMovie(movieNumber) {
+            const selectedMovie = document.querySelector(`.movie-item:nth-child(${movieNumber})`);
+            const movieItems = document.querySelectorAll('.movie-item');
+            movieItems.forEach(item => item.classList.remove('selected'));
+            selectedMovie.classList.add('selected');
+        }
+    </script>
+</body>
+</html>

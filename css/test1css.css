@@ -1,0 +1,23 @@
+/* "*" 전체 선택자 */
+*{margin: 0; padding: 0; box-sizing: border-box; /*font-size: 0;*/}
+/* 태그 선택자 */
+h1{
+    background-color: pink;
+    width: 300px; height: 80px;
+    border: 5px solid black;  
+    display:inline;  
+}
+/* 클래스 선택자 */
+.ch1{
+    background-color: skyblue;
+    border: 2px solid red;
+    padding-bottom: 30px;
+    width: 300px; height: 80px;
+    display:inline;
+}
+/* 아이디 선택자 */
+#ch2{
+    background-color: orange;
+    width: 300px; height: 80px;
+    display:inline;
+}

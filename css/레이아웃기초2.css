@@ -1,0 +1,60 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+section{
+    width: 960px;
+    margin: 0 auto;
+}
+#item1-wrap{        
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+#item1-wrap .item1-box{
+    width: 32%;
+}
+#item1-wrap .item1-box img{
+    width: 100%;
+}
+#item1-wrap .item1-box h6{
+    color: orange;
+    font-size: 12px;
+    margin-top: 5px;
+}
+#item1-wrap .item1-box h5{
+    font-size: 16px;
+    margin: 5px 0;
+}
+#item1-wrap .item1-box p{
+    font-size: 12px;
+}
+
+/* 아이템 2 */
+#item2-wrap{    
+    font-size: 0; 
+    display: flex;
+    flex-wrap: wrap;
+}
+#item2-wrap .item2-box{
+    width: 50%;
+    display: flex;   
+}
+#item2-wrap .item2-box .img-box{ 
+    width: 40%;    
+}
+#item2-wrap .item2-box .img-box img{ 
+   width: 100%;
+}
+#item2-wrap .item2-box .text-box{  
+    width: 60%;
+    font-size: 14px;
+    padding: 20px; 
+}
+#item2-wrap .item2-box .text-box .name{  
+    display: flex; font-size: 16px;
+    align-items: center;
+    color: black;
+    padding: 10px 0;
+}
+#item2-wrap .item2-box .text-box .name img{
+    width: 30px; height: 30px;
+    margin-right: 5px;
+}

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    
+    <!-- 포토라마 -->
+    <link href="../fotorama/fotorama.css" rel="stylesheet">
+    <script src="../fotorama/fotorama.js"></script>
+
+    <title>사진 앨범 웹사이트</title>
+    <style>
+        *{margin: 0; padding: 0; box-sizing: border-box;}
+        body {
+            /* margin: 0; 삭제 */
+            /* font-family: Arial, sans-serif;  삭제*/
+        }
+
+        header h1{
+            height: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .album-container {
+            position: relative;
+            width: 500px;
+            height: 250px;
+            margin: auto;            
+        }
+
+        .photo-container {
+            position: relative;         
+            width: 100%; height: 100%; 
+        }
+        
+        img {
+            width: 100%;
+            position: absolute;
+            left: 0; top: 0;
+            border: 2px solid black;           
+        }
+
+        .prev-btn, .next-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .prev-btn {
+            left: 10px;
+        }
+
+        .next-btn {
+            right: 10px;
+        }
+        .slide{          
+           display: flex;
+           justify-content: center;
+           border: 2px solid black;
+           width: 500px;
+           margin: 100px auto;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>사진 앨범 웹사이트</h1>
+    </header>
+
+    <section>        
+        <div class="album-container">
+            <div class="photo-container">
+                <img src="../contents/img/slide01.png" alt="Photo 1">
+                <img src="../contents/img/slide02.png" alt="Photo 2">
+                <img src="../contents/img/slide03.png" alt="Photo 3">
+                <img src="../contents/img/slide04.png" alt="Photo 4">
+                <img src="../contents/img/slide05.png" alt="Photo 5">
+            </div>
+            <button class="prev-btn">이전</button>
+            <button class="next-btn">다음</button>
+        </div> 
+
+        <div class="slide">
+            <div class="fotorama" data-autoplay="1000">
+                <img src="../contents/img/slide01.png" alt="Photo 1">
+                <img src="../contents/img/slide02.png" alt="Photo 2">
+                <img src="../contents/img/slide03.png" alt="Photo 3">
+                <img src="../contents/img/slide04.png" alt="Photo 4">
+                <img src="../contents/img/slide05.png" alt="Photo 5">
+            </div>
+        </div>         
+        
+    </section>
+
+    <script>
+        $(document).ready(function(){
+            // 앞으로 모든 코드는 여기서 작성을 합니다.
+            console.log("정상적으로 작동 합니다.");
+            
+            // 변수 선언하기
+            var slide_img = $(".photo-container img");
+            var img_count = 0;            
+
+            // 초기화 실행 코드
+            slide_img.hide(); 
+            slide_img.eq(0).show();     
+
+            // 오른쪽 버튼 클릭 이벤트
+            $(".next-btn").click(function(){    
+                if(img_count < slide_img.length-1){
+                    img_count ++;
+                    slide_img.hide(); 
+                    slide_img.eq(img_count).show();   
+                    console.log(img_count);
+                }else{
+                    slide_img.hide();
+                    img_count = 0;
+                    slide_img.eq(img_count).show(); 
+                }             
+            });
+
+            // 왼쪽 버튼 클릭 이벤트
+            $(".prev-btn").click(function(){    
+                if(img_count > 0){
+                    img_count --;
+                    slide_img.hide(); 
+                    slide_img.eq(img_count).show();   
+                    console.log(img_count);
+                }else{
+                    slide_img.hide();
+                    img_count = 4;
+                    slide_img.eq(img_count).show(); 
+                }                        
+            });
+
+            $(".prev-btn").click(function(){    
+                               
+            });
+               
+        });        
+    </script>
+</body>
+</html>
